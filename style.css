@@ -23,7 +23,41 @@ a:active {
   font-size: 70px;
 }
 
-iframe[src$=".pdf"] {
+.iframe-wrap {
+  position: relative;
   width: 100%;
-  height: 80vh;
+  padding: calc(480 / 854 * 100%) 0 0;
+}
+
+.iframe-wrap iframe[src$=".pdf"] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+
+@media screen and (max-width: 480px) {
+  /* 480px以下に適用されるCSS（スマホ用） */
+  h1 {
+    font-size: 120px;
+  }
+
+  .logo-box {
+    margin-top: 200px;
+  }
+
+  a:link,
+  a:visited,
+  a:hover,
+  a:active {
+    color: black;
+    font-size: 40px;
+  }
+
+  iframe[src$=".pdf"] {
+    width: 100%;
+    height: 40vh;
+  }
 }
